@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 1.用promise实现一个暂停函数(笔试原题)
+      function sleep(time) {
+        // todo...
+        return new Promise(resolve => {
+          setTimeout(resolve, time)
+        })
+      }
+
+      async function main() {
+        await sleep(3000)
+        console.log('你好')
+      }
+
+      main() // 延迟三秒打印你好
+
+      // 2. 将一个数组 扩大100倍, 求和
+      function sum(arr) {
+        return arr.reduce((total, curr) => {
+          return (total += curr * 100)
+        }, 0)
+      }
+      let arr = [1, 2, 3]
+      console.log(sum(arr)) // 600
+
+      // [1,2,3] ==> [100,200,300] ==> 求和
+    </script>
+  </body>
+</html>
